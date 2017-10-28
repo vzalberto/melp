@@ -1,0 +1,44 @@
+
+<div id="app">
+   <h1>{{ logo }}</h1>
+
+    <p>Sort by:</p>
+        <input type="radio" id="sortByRating" value="rating" v-model="sortBy" checked>
+        <label for="sortByRating">Rating</label>
+        <br>
+        <input type="radio" id="sortByAlphabet" value="name" v-model="sortBy">
+        <label for="sortByAlphabet">Name</label>
+        
+        <br>
+    <p>Order:</p>
+        <input type="radio" id="ascending" value="asc" v-model="orderBy" checked>
+        <label for="ascending">Ascending</label>
+        <br>
+        <input type="radio" id="descending" value="des" v-model="orderBy">
+        <label for="descending">Descending</label>
+
+    <template v-for="location in orderedLocations">
+        <p>{{ location.name }} <strong>{{ location.rating }}</strong></p>
+    
+        <address>{{ location.address.street }}</address>
+        <address>{{ location.address.city }}</address>
+        <address>{{ location.address.state }}</address>
+
+        <br>
+
+        <a :href="location.contact.site">{{ location.contact.site }}</a>
+        <br>
+        <a :href="'mailto:'+location.contact.email">{{ location.contact.email }}</a>
+        <br>
+        <a :href="'phone:'+location.contact.phone">{{ location.contact.phone }}</a>
+
+        <hr>
+    </template>
+
+</div>
+
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js" integrity="sha256-SzKOQsVYGX1bmddyfPzGC6yXY/rWYGUSMOi6+T9gZ+0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.3"></script>
+<script src="js/app.js"></script>
