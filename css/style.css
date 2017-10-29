@@ -52,7 +52,7 @@ body{
     background-color: #EB5F00;
 }
 
-#github-link:visited, #github-link:active{
+#github-link:link, #github-link:visited, #github-link:active{
     color: #d6a77a;
 }
 
