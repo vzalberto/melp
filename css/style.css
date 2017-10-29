@@ -1,11 +1,15 @@
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 body{
-    padding-top: 9em;
+    padding-top: 7.6em;
 }
 
 .brand{
     color: white !important;
     font-family: 'Montez', cursive;
-    font-size: 5em;
+    font-size: 4em;
 }
 
 .rating_r{
@@ -19,11 +23,13 @@ body{
 .location-filter{
     background-color: #fdd9ad;
     padding: 1em 0;
+    font-size: .75em;
 }
 
 .location-info{
     font-size: 1em;
     margin: 1em 0;
+    overflow-x: scroll; 
 }
 
 .location-info, .location-name, .location-address{
@@ -48,6 +54,7 @@ body{
 
 .header{
     background-color: #EB5F00;
+    box-shadow: 0 2px 5px grey;
 }
 
 #github-link:link, #github-link:visited, #github-link:active{
@@ -56,4 +63,15 @@ body{
 
 .location-contact a, #github-link:hover{
     color: #4f424b;
+}
+
+.map-container, .sidebar{
+    height: 100%;
+}
+.map-container{
+    padding: 0;
+}
+
+.sidebar{
+    overflow-y: scroll;
 }

@@ -1,17 +1,27 @@
+Vue.use(VueGoogleMaps, {
+    load: {
+      key: 'AIzaSyA1EhRNbIQ4bmpHLHdl7LcXX0MYz6lilU0'
+    }
+  });
+
+Vue.component('star-rating', VueStarRating.default);
+
 var app = new Vue({
     el: '#app',
     data: {
       logo: 'Melp!',
       locations: [],
       sortBy:    'rating',
-      orderBy:    'asc'
+      orderBy:    'des',
+      center:   {lat:19.432608, lng: -99.133209},
+      zoom:     15
     },
     computed: {
         orderedLocations: function () {
         if (this.orderBy === 'asc')
-            return _.sortBy(this.locations, this.sortBy).reverse()
-        else
             return _.sortBy(this.locations, this.sortBy)
+        else
+            return _.sortBy(this.locations, this.sortBy).reverse()
         }
     },
     methods:{

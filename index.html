@@ -5,32 +5,32 @@
     <link href="https://fonts.googleapis.com/css?family=Montez|Raleway" rel="stylesheet">
 </head>
 <body>
+    
     <div id="app">
-
-    <div class="container-fluid">
             <nav class="header navbar navbar-light fixed-top">
                     <span class="navbar-brand mb-0 h1 brand">{{ logo }}</span>
                     <a id="github-link" href="https://github.com/vzalberto/melp" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
             </nav>
+    <div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-12 col-lg-3 sidebar">
 
             <div class="row location-filter">
 
                 <div class="col-sm-6">
-                     Sort by:&nbsp;
-                         <input type="radio" id="sortByRating" value="rating" v-model="sortBy" checked>
-                         <label for="sortByRating">Rating</label>
-                         
-                         <input type="radio" id="sortByAlphabet" value="name" v-model="sortBy">
-                         <label for="sortByAlphabet">Name</label>
+                     Sort by:
+                         <select v-model="sortBy">
+                             <option value="rating">Rating</option>
+                             <option value="name" selected>Name</option>
+                         </select>
                 </div>
 
                 <div class="col-sm-6">
-                     Order:&nbsp;
-                         <input type="radio" id="ascending" value="asc" v-model="orderBy" checked>
-                         <label for="ascending">Ascending</label>
-                         
-                         <input type="radio" id="descending" value="des" v-model="orderBy">
-                         <label for="descending">Descending</label>
+                         <select v-model="orderBy">
+                             <option value="asc">Ascending</option>
+                             <option value="des" selected>Descending</option>
+                         </select>
                  </div>
             </div>
                      <template v-for="location in orderedLocations">
@@ -38,7 +38,8 @@
 
                             <div class="col-sm-12 location-name">
                                 <hr>
-                                <p>{{ location.name }} {{ location.rating }}<span class="rating_r">/5</span></p>
+                                <p>{{ location.name }}</p>
+                                <star-rating v-model="location.rating" read-only=true show-rating=false star-size=20></star-rating>
                             </div>
                             
                             <div class="col-sm-6 location-address">
@@ -56,12 +57,33 @@
                             </div>
                          </div>
                      </template>
-                 
+        </div>
+        <div class="col-sm-12 col-lg-9 map-container">
+                <gmap-map
+                :center="center"
+                :zoom="zoom"
+                style="width: 100%; height: 100%;"
+              >
+              <gmap-marker
+              :key="index"
+              v-for="(m, index) in locations"
+              :position="m.address.location"
+              :clickable="true"
+              :draggable="true"
+              @click="center=m.position"
+            ></gmap-marker>
+
+            </gmap-map>
+        </div>
+    </div>
     </div>  <!--container-->
     </div>  <!--app-->
 
 <script src="https://unpkg.com/vue"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js" integrity="sha256-SzKOQsVYGX1bmddyfPzGC6yXY/rWYGUSMOi6+T9gZ+0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.3"></script>
+<script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+
+<script src="js/vue-google-maps.js"></script> 
 <script src="js/app.js"></script>
 </body>
