@@ -1,0 +1,61 @@
+body{
+    padding-top: 9em;
+}
+
+.brand{
+    color: white !important;
+    font-family: 'Montez', cursive;
+    font-size: 5em;
+
+}
+
+.rating_r{
+    color: #9cbca5;
+}
+
+.location-filter, .location-info{
+    font-family: 'Raleway', sans-serif;
+}
+
+.location-filter{
+    background-color: #fdd9ad;
+    padding: 1em 0;
+}
+
+.location-info{
+    font-size: 1em;
+    margin: 1em 0;
+}
+
+.location-info, .location-name, .location-address{
+    padding-left: 0;
+}
+
+.location-name{
+    font-size: 2em;
+}
+
+.location-address{
+    font-style: italic;
+}
+
+.location-address p{
+    margin-bottom: 0;
+}
+
+.location-contact{
+    text-align: right;
+}
+
+
+.header{
+    background-color: #EB5F00;
+}
+
+#github-link:visited, #github-link:active{
+    color: #d6a77a;
+}
+
+.location-contact a, #github-link:hover{
+    color: #4f424b;
+}

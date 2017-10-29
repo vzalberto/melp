@@ -1,44 +1,67 @@
+<head>
+    <script src="https://use.fontawesome.com/e3528ce583.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montez|Raleway" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
 
-<div id="app">
-   <h1>{{ logo }}</h1>
+    <div class="container-fluid">
+            <nav class="header navbar navbar-light fixed-top">
+                    <span class="navbar-brand mb-0 h1 brand">{{ logo }}</span>
+                    <a id="github-link" href="https://github.com/vzalberto/melp" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+            </nav>
 
-    <p>Sort by:</p>
-        <input type="radio" id="sortByRating" value="rating" v-model="sortBy" checked>
-        <label for="sortByRating">Rating</label>
-        <br>
-        <input type="radio" id="sortByAlphabet" value="name" v-model="sortBy">
-        <label for="sortByAlphabet">Name</label>
-        
-        <br>
-    <p>Order:</p>
-        <input type="radio" id="ascending" value="asc" v-model="orderBy" checked>
-        <label for="ascending">Ascending</label>
-        <br>
-        <input type="radio" id="descending" value="des" v-model="orderBy">
-        <label for="descending">Descending</label>
+            <div class="row location-filter">
 
-    <template v-for="location in orderedLocations">
-        <p>{{ location.name }} <strong>{{ location.rating }}</strong></p>
-    
-        <address>{{ location.address.street }}</address>
-        <address>{{ location.address.city }}</address>
-        <address>{{ location.address.state }}</address>
+                <div class="col-sm-6">
+                     <p>Sort by:</p>
+                         <input type="radio" id="sortByRating" value="rating" v-model="sortBy" checked>
+                         <label for="sortByRating">Rating</label>
+                         <br>
+                         <input type="radio" id="sortByAlphabet" value="name" v-model="sortBy">
+                         <label for="sortByAlphabet">Name</label>
+                </div>
 
-        <br>
+                <div class="col-sm-6">
+                     <p>Order:</p>
+                         <input type="radio" id="ascending" value="asc" v-model="orderBy" checked>
+                         <label for="ascending">Ascending</label>
+                         <br>
+                         <input type="radio" id="descending" value="des" v-model="orderBy">
+                         <label for="descending">Descending</label>
+                 </div>
+            </div>
+                     <template v-for="location in orderedLocations">
+                         <div class="row location-info">
 
-        <a :href="location.contact.site">{{ location.contact.site }}</a>
-        <br>
-        <a :href="'mailto:'+location.contact.email">{{ location.contact.email }}</a>
-        <br>
-        <a :href="'phone:'+location.contact.phone">{{ location.contact.phone }}</a>
-
-        <hr>
-    </template>
-
-</div>
-
+                            <div class="col-sm-12 location-name">
+                                <hr>
+                                <p>{{ location.name }} {{ location.rating }}<span class="rating_r">/5</span></p>
+                            </div>
+                            
+                            <div class="col-sm-6 location-address">
+                                <p>{{ location.address.street }}</p>
+                                <p>{{ location.address.city }}</p>
+                                <p>{{ location.address.state }}</p>
+                            </div>
+                        
+                            <div class="col-sm-6 location-contact">
+                                <a :href="location.contact.site" target="_blank">{{ location.contact.site }}</a>&nbsp;🖥
+                                <br>
+                                <a :href="'mailto:'+location.contact.email">{{ location.contact.email }}</a>&nbsp;📬
+                                <br>
+                                <a :href="'phone:'+location.contact.phone">{{ location.contact.phone }}</a> &nbsp;📞  
+                            </div>
+                         </div>
+                     </template>
+                 
+    </div>  <!--container-->
+    </div>  <!--app-->
 
 <script src="https://unpkg.com/vue"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js" integrity="sha256-SzKOQsVYGX1bmddyfPzGC6yXY/rWYGUSMOi6+T9gZ+0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.3"></script>
 <script src="js/app.js"></script>
+</body>
