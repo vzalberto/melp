@@ -68,7 +68,7 @@ body{
 .map-container, .sidebar{
     height: 100%;
 }
-.map-container{
+.map-container, .fb-share{
     padding: 0;
 }
 
