@@ -19,22 +19,26 @@
 
             <div class="row location-filter">
 
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                      Sort by:
                          <select v-model="sortBy">
                              <option value="rating">Rating</option>
                              <option value="name" selected>Name</option>
                          </select>
-                </div>
-
-                <div class="col-sm-6">
                          <select v-model="orderBy">
                              <option value="asc">Ascending</option>
                              <option value="des" selected>Descending</option>
                          </select>
+                </div>
+
+                <div class="col-sm-4">
+                 </div>
+
+                 <div class="col-sm-4">
+                     Search: <input v-model="searchQuery">
                  </div>
             </div>
-                     <template v-for="location in orderedLocations">
+                     <template v-for="location in filteredLocations">
                          <div class="row location-info">
 
                             <div class="col-sm-12 location-name">

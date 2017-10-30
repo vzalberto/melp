@@ -14,14 +14,22 @@ var app = new Vue({
       sortBy:    'rating',
       orderBy:    'des',
       center:   {lat:19.432608, lng: -99.133209},
-      zoom:     15
+      zoom:     15,
+      searchQuery: ''
     },
     computed: {
+
         orderedLocations: function () {
-        if (this.orderBy === 'asc')
-            return _.sortBy(this.locations, this.sortBy)
-        else
-            return _.sortBy(this.locations, this.sortBy).reverse()
+            if (this.orderBy === 'asc')
+                return _.sortBy(this.locations, this.sortBy)
+            else
+                return _.sortBy(this.locations, this.sortBy).reverse()
+        },
+
+        filteredLocations: function(){
+            return this.orderedLocations.filter((element) => {
+                return element.name.match(this.searchQuery);
+            });
         }
     },
     methods:{
