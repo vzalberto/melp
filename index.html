@@ -14,7 +14,7 @@
     <div class="container-fluid">
 
     <div class="row">
-        <div class="col-sm-12 col-lg-3 sidebar">
+        <div class="col-sm-12 col-lg-6 sidebar">
 
             <div class="row location-filter">
 
@@ -39,7 +39,7 @@
                             <div class="col-sm-12 location-name">
                                 <hr>
                                 <p>{{ location.name }}</p>
-                                <star-rating v-model="location.rating" read-only=true show-rating=false star-size=20></star-rating>
+                                <star-rating v-model="location.rating" :read-only=true :show-rating=false :star-size=20></star-rating>
                             </div>
                             
                             <div class="col-sm-6 location-address">
@@ -58,7 +58,7 @@
                          </div>
                      </template>
         </div>
-        <div class="col-sm-12 col-lg-9 map-container">
+        <div class="col-sm-12 col-lg-6 map-container">
                 <gmap-map
                 :center="center"
                 :zoom="zoom"
