@@ -28,7 +28,7 @@ var app = new Vue({
 
         filteredLocations: function(){
             return this.orderedLocations.filter((element) => {
-                return element.name.match(this.searchQuery);
+                return element.name.match(new RegExp(this.searchQuery, 'i'));
             });
         }
     },
