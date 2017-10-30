@@ -25,13 +25,14 @@
                              <option value="rating">Rating</option>
                              <option value="name" selected>Name</option>
                          </select>
-                         <select v-model="orderBy">
-                             <option value="asc">Ascending</option>
-                             <option value="des" selected>Descending</option>
-                         </select>
                 </div>
 
                 <div class="col-sm-4">
+                        Order:
+                        <select v-model="orderBy">
+                            <option value="asc">Ascending</option>
+                            <option value="des" selected>Descending</option>
+                        </select>
                  </div>
 
                  <div class="col-sm-4">
