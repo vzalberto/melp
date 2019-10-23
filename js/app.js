@@ -34,7 +34,7 @@ var app = new Vue({
     },
     methods:{
         fetchLocations(){
-            this.$http.get('https://s3-us-west-2.amazonaws.com/lgoveabucket/data_melp.json', )
+            this.$http.get('https://recruiting-datasets.s3.us-east-2.amazonaws.com/data_melp.json', )
               .then(response => {
                 return response.json();
               })
