@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/melp/static/js/main.3307e66f.chunk.js",
+    "main.js.map": "/melp/static/js/main.3307e66f.chunk.js.map",
+    "runtime-main.js": "/melp/static/js/runtime-main.aa16e60c.js",
+    "runtime-main.js.map": "/melp/static/js/runtime-main.aa16e60c.js.map",
+    "static/css/2.6d4cc9f1.chunk.css": "/melp/static/css/2.6d4cc9f1.chunk.css",
+    "static/js/2.5b484222.chunk.js": "/melp/static/js/2.5b484222.chunk.js",
+    "static/js/2.5b484222.chunk.js.map": "/melp/static/js/2.5b484222.chunk.js.map",
+    "index.html": "/melp/index.html",
+    "precache-manifest.972663ecb5230a09c337b83b63b0b7fa.js": "/melp/precache-manifest.972663ecb5230a09c337b83b63b0b7fa.js",
+    "service-worker.js": "/melp/service-worker.js",
+    "static/css/2.6d4cc9f1.chunk.css.map": "/melp/static/css/2.6d4cc9f1.chunk.css.map",
+    "static/media/index.css": "/melp/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  }
+}
