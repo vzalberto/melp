@@ -11,10 +11,13 @@ import RestaurantList from '../RestaurantList'
 import RatingDistributionChart from '../RatingDistributionChart'
 import AverageRatingLabel from '../AverageRatingLabel'
 import StandardDeviationLabel from '../StandardDeviationLabel'
+import TotalRestaurantsInRadius from '../TotalRestaurantsInRadius'
 
 const Melp = () => {
 
 const [restaurants, setRestaurants] = useState([]);
+const [avg, setAvg] = useState(0);
+const [sigma, setSigma] = useState(0);
 
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrl = 'https://recruiting-datasets.s3.us-east-2.amazonaws.com/data_melp.json'
@@ -27,6 +30,31 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
   useEffect(() => {
     fetchData();
   }, []);  
+
+  useEffect(()=>{
+    let sum = 0;
+    const m = restaurants.length
+
+    for (let i = restaurants.length - 1; i >= 0; i--) {
+      sum += restaurants[i].rating 
+    }
+
+    setAvg(sum/m)
+
+  }, [restaurants])
+
+  useEffect(()=>{
+    let sum = 0;
+    const m = restaurants.length
+
+    for (let i = restaurants.length - 1; i >= 0; i--) {
+      sum += Math.pow((parseFloat(restaurants[i].rating) - parseFloat(avg)), 2)
+    }
+
+    console.log(sum)
+
+    setSigma(Math.sqrt(sum/(m-1)).toFixed(3))
+  }, [avg])
 
   const theme = {
     global: {
@@ -61,10 +89,13 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     </Box>
 
     <Box gridArea="main" background="light-2">
-      <Text>mapa</Text>
-      <AverageRatingLabel />
-      <StandardDeviationLabel />
-      <RatingDistributionChart/>
+      <Text> RestaurantMap </Text>
+
+        <TotalRestaurantsInRadius total={restaurants.length}/>
+        <AverageRatingLabel data={avg}/>
+        <StandardDeviationLabel sigma={sigma}/>
+        <RatingDistributionChart />
+
     </Box>
   </Grid>  
 

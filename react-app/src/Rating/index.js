@@ -6,7 +6,7 @@ const Rating = (props) => {
 	return(
 		
 		<Box gridArea="restaurantRating">
-					<p>{props.rating + 1} / 5 </p>
+					<p>{props.rating} ★</p>
 		</Box>
 	)
 }

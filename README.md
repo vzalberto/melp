@@ -19,7 +19,7 @@ This is Melp!
 				<Address>
 				<Contact>
 	<Main>
-		<Map>
+		<RestaurantMap>
 		<RadiusInput>
 		<StatisticalInfo>
 			<AverageRatingLabel>
