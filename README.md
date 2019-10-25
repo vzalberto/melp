@@ -24,4 +24,4 @@ This is Melp!
 		<StatisticalInfo>
 			<AverageRatingLabel>
 			<StandardDeviationLabel>
-			<DistributionChart>
+			<RatingDistributionChart>

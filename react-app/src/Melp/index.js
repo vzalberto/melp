@@ -8,6 +8,10 @@ import { Anchor, Grid, Grommet, Box, Text } from 'grommet';
 
 import RestaurantList from '../RestaurantList'
 
+import RatingDistributionChart from '../RatingDistributionChart'
+import AverageRatingLabel from '../AverageRatingLabel'
+import StandardDeviationLabel from '../StandardDeviationLabel'
+
 const Melp = () => {
 
 const [restaurants, setRestaurants] = useState([]);
@@ -58,6 +62,9 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
 
     <Box gridArea="main" background="light-2">
       <Text>mapa</Text>
+      <AverageRatingLabel />
+      <StandardDeviationLabel />
+      <RatingDistributionChart/>
     </Box>
   </Grid>  
 
