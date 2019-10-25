@@ -4,6 +4,7 @@ This is Melp!
 
 # Component tree:
 
+```HTML
 <Melp>
 	<Header>
 		<MelpLogo>
