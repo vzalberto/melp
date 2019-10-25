@@ -9,6 +9,7 @@ import Address from '../Address'
 const RestaurantCard = (props) => {
 	return(
 		<Grid 
+		background="neutral-1"
 			rows={['xsmall', 'small']}
 			border="all"
 			columns={['xsmall', 'small']}
@@ -22,8 +23,10 @@ const RestaurantCard = (props) => {
 			]}
 		>
 
-				<Box gridArea="restaurantName">
-						{props.data.name}
+				<Box 
+				gridArea="restaurantName" 
+				>
+						<Text>{props.data.name}</Text>
 				</Box>
 
 				<Address data={props.data.address} />

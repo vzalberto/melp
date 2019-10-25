@@ -7,7 +7,10 @@ import { Domain, Mail, Phone } from 'grommet-icons'
 const Contact = (props) => {
 	return(
 
-		<Box gridArea="restaurantContact">
+		<Box 
+		gridArea="restaurantContact"
+		align="end"
+		>
 			<Box direction="row">
 				<Mail />
 
