@@ -31,7 +31,7 @@ const RestaurantList = (props) => {
 	}, [list]);
 
 	return(
-		<Box direction="column">
+		<Box>
 			<Box direction="row">
 
 				<Box>
@@ -40,9 +40,9 @@ const RestaurantList = (props) => {
 					  	icon={ name_asc ? (<Ascend/>) : (<Descend/>)}
 
 					  onClick={() => {
-					  	const arr = sortByKey([...props.restaurants], "name", name_asc)
-					  	setNameAsc(!name_asc)
-					  	setList(arr)
+					  	const arr = sortByKey([...props.restaurants], "name", name_asc);
+					  	setNameAsc(!name_asc);
+					  	setList(arr);
 					  }}
 
 					/>

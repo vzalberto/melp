@@ -38,8 +38,8 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
 
     <Grommet full theme={theme}>
       <Grid
-        rows={['xsmall', 'small']}
-        columns={['1/3', ['2/3', 'flex']]}
+        rows={['xxsmall', 'large']}
+        columns={['1/3', '2/3']}
         gap="small"
         areas={[
           { name: 'header', start: [0, 0], end: [1, 0] },
