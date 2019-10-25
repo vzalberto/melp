@@ -4,7 +4,7 @@ import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import 'typeface-roboto';
 
-import { Grid, Grommet, Box } from 'grommet';
+import { Anchor, Grid, Grommet, Box, Text } from 'grommet';
 
 import RestaurantList from '../RestaurantList'
 
@@ -23,46 +23,45 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
   useEffect(() => {
     fetchData();
   }, []);  
-const theme = {
-  global: {
-    font: {
-      family: 'Roboto',
-      size: '14px',
-      height: '20px',
+
+  const theme = {
+    global: {
+      font: {
+        family: 'Inconsolata',
+        size: '14px',
+        height: '20px',
+      },
     },
-  },
-}
+  }
 
   return (
 
     <Grommet full theme={theme}>
-    
-    <Grid
-      rows={['xsmall', 'small']}
-      columns={['1/3', '2/3']}
-      gap="small"
-      areas={[
-        { name: 'header', start: [0, 0], end: [1, 0] },
-        { name: 'nav', start: [0, 1], end: [0, 1] },
-        { name: 'main', start: [1, 1], end: [2, 1] },
-      ]}
-    >
-      <Box gridArea="header" >
-        <Typography variant="h1" component="h2" >
-          Melp
-        </Typography>
-      </Box>
+      <Grid
+        rows={['xsmall', 'small']}
+        columns={['1/3', ['2/3', 'flex']]}
+        gap="small"
+        areas={[
+          { name: 'header', start: [0, 0], end: [1, 0] },
+          { name: 'nav', start: [0, 1], end: [0, 1] },
+          { name: 'main', start: [1, 1], end: [1, 1] },
+        ]}
+  >
+    <Box gridArea="header" background="brand">
+      <Text>Melp</Text>
+      <Anchor href="https://github.com/vzalberto/melp" primary label="View on Github" target="_blank" />
+    </Box>
 
-      <Box gridArea="nav" background="light-5">
-        <RestaurantList restaurants={restaurants} />
-      </Box>
+    <Box gridArea="nav">
+      <RestaurantList restaurants={restaurants} />
+    </Box>
 
-      <Box gridArea="main" background="light-2">
-        <h1>mapa</h1>
-      </Box>
+    <Box gridArea="main" background="light-2">
+      <Text>mapa</Text>
+    </Box>
+  </Grid>  
 
-    </Grid>
-      </Grommet>
+    </Grommet>
   );
 }
 

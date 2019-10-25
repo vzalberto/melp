@@ -1,25 +1,35 @@
 import React from 'react';
 
-import {Box} from 'grommet';
+import { Anchor, Box } from 'grommet';
 
-import { Domain, Mail, Phone} from 'grommet-icons'
+import { Domain, Mail, Phone } from 'grommet-icons'
 
 const Contact = (props) => {
 	return(
-		<Box direction="column">
-		<Box direction="row">
-			<Mail />
 
-			{props.contact.email}
-</Box><Box direction="row">
-			<Phone />
+		<Box gridArea="restaurantContact">
+			<Box direction="row">
+				<Mail />
 
-			{props.contact.phone}
-</Box><Box direction="row">
-			<Domain />
+				{props.contact.email}
+					
+			</Box>
+			
+			<Box direction="row">
+				<Phone />
 
-			{props.contact.site}
-		</Box></Box>
+				{props.contact.phone}
+			</Box>
+
+			<Box direction="row">
+				<Domain />
+
+				
+					{props.contact.site}
+				
+			</Box>
+
+		</Box>
 	)
 }
 

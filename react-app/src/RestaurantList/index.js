@@ -17,6 +17,7 @@ const RestaurantList = (props) => {
 	}
 
 	const [list, setList] = useState(props.restaurants);
+
 	const [name_asc, setNameAsc] = useState(true);
 	const [rating_asc, setRatingAsc] = useState(true);
 
@@ -34,42 +35,39 @@ const RestaurantList = (props) => {
 			<Box direction="row">
 
 				<Box>
-				<Button
-				  	label="A-Z"
-				  	icon={ name_asc ? (<Ascend/>) : (<Descend/>)}
+					<Button
+					  	label="A-Z"
+					  	icon={ name_asc ? (<Ascend/>) : (<Descend/>)}
 
-				  onClick={() => {
-				  	const arr = sortByKey([...props.restaurants], "name", name_asc)
-				  	setNameAsc(!name_asc)
-				  	setList(arr)
-				  }}
+					  onClick={() => {
+					  	const arr = sortByKey([...props.restaurants], "name", name_asc)
+					  	setNameAsc(!name_asc)
+					  	setList(arr)
+					  }}
 
-				/>
+					/>
 				</Box>
 
-			
-
 				<Box>
-				<Button
+					<Button
+					  	label="Rating"
+					  	icon={ rating_asc ? (<Ascend/>) : (<Descend/>)}
 
-				  	label="Rating"
-				  	icon={ rating_asc ? (<Ascend/>) : (<Descend/>)}
+					  onClick={() => {
+					  	const arr = sortByKey([...props.restaurants], "rating", rating_asc)
+						setRatingAsc(!rating_asc)
+					  	setList(arr)
 
-				  onClick={() => {
-				  	const arr = sortByKey([...props.restaurants], "rating", rating_asc)
-					setRatingAsc(!rating_asc)
-				  	setList(arr)
+					  }}
 
-				  }}
-
-				/>
+					/>
 
 				</Box>
 			</Box>
 
 			<br /><br /><br />
 			
-			<Box direction="column" gap="medium">
+			<Box direction="column" pad="medium">
 				{list.map((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
 			</Box>
 

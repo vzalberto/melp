@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Typography } from '@material-ui/core';
-
-import { Box } from 'grommet';
+import { Box, Grid, Text } from 'grommet';
 
 import Rating from '../Rating'
 import Contact from '../Contact'
@@ -11,39 +9,31 @@ import Address from '../Address'
 const RestaurantCard = (props) => {
 	return(
 		
-		<Box 
-			direction="row" 
-			pad="small"
-			round="medium"
+		<Grid 
+			rows={['xsmall', 'small']}
 
-			border={{ color: 'black', size: 'small' }}
+			columns={['xsmall', 'small']}
+
+			gap="medium"
+			areas={[
+				{name: 'restaurantName', start: [0,0], end: [1,0]},
+				{name: 'restaurantRating', start: [1,0], end: [2,0]},
+				{name: 'restaurantAddress', start: [0,1], end: [1,1]},
+				{name: 'restaurantContact', start: [1,1], end: [2,1]},
+			]}
 		>
 
-			<Box direction="column">
-						
-						<Box>
-						<Typography variant="body1" gutterBottom>
-							{props.data.name}
-						</Typography>
-						</Box>
-						
-						<Box>
-						<Rating rating={props.data.rating} />
-						</Box>
-			</Box>
+				<Box gridArea="restaurantName">
+						{props.data.name}
+				</Box>
 
+				<Address data={props.data.address} />
+			
+				<Rating rating={props.data.rating} />
 
-			<Box direction="column">
-					<Box>
-					<Contact contact={props.data.contact} />
-					</Box>
+				<Contact contact={props.data.contact} />
 
-					<Box>
-					<Address data={props.data.address} />
-					</Box>
-			</Box>
-
-		</Box>
+		</Grid>
 	)
 }
 

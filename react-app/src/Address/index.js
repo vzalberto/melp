@@ -1,15 +1,16 @@
 import React from 'react';
 
-import {Box} from 'grommet';
+import {Box, Text} from 'grommet';
 
 const Address = (props) => {
 	return(
-		
-		<Box direction="row">
+
+		<Box gridArea="restaurantAddress">
+
 			{props.data.street}
 			<br />
-			{props.data.city},&nbsp;
-			{props.data.state}
+			{props.data.city},&nbsp;{props.data.state}
+			
 		</Box>
 	)
 }
