@@ -65,10 +65,12 @@ const RestaurantList = (props) => {
 				</Box>
 			</Box>
 
-			<br /><br /><br />
+			<br />
 			
-			<Box direction="column" pad="medium">
-				{list.map((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
+			<Box overflow="auto" pad="medium">
+				<InfiniteScroll items={list}>
+				{((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
+				</InfiniteScroll>
 			</Box>
 
 		</Box>
