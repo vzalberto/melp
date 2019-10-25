@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import RestaurantCard from '../RestaurantCard';
 
 import { Box, Button, InfiniteScroll } from 'grommet';
@@ -31,9 +32,8 @@ const RestaurantList = (props) => {
 	}, [list]);
 
 	return(
-		<Box>
-			<Box direction="row">
-
+		<Box direction="column" gap="xlarge" >
+			<Box direction="row" gap="medium" pad="large" justifiy="center"> 
 				<Box>
 					<Button
 					  	label="A-Z"
@@ -64,10 +64,8 @@ const RestaurantList = (props) => {
 
 				</Box>
 			</Box>
-
-			<br />
 			
-			<Box overflow="auto" pad="medium">
+			<Box overflow="auto" pad="small" direction="column">
 				<InfiniteScroll items={list}>
 				{((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
 				</InfiniteScroll>

@@ -8,13 +8,12 @@ import Address from '../Address'
 
 const RestaurantCard = (props) => {
 	return(
-		
 		<Grid 
 			rows={['xsmall', 'small']}
-
+			border="all"
 			columns={['xsmall', 'small']}
 
-			gap="medium"
+			gap="small"
 			areas={[
 				{name: 'restaurantName', start: [0,0], end: [1,0]},
 				{name: 'restaurantRating', start: [1,0], end: [2,0]},
