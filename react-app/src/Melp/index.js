@@ -6,7 +6,7 @@ import 'typeface-roboto';
 
 import { Grid, Grommet, Box } from 'grommet';
 
-import RestaurantList from './RestaurantList'
+import RestaurantList from '../RestaurantList'
 
 const Melp = () => {
 
@@ -35,20 +35,20 @@ const theme = {
 
   return (
 
-    <Grommet theme={theme}>
+    <Grommet full theme={theme}>
     
     <Grid
-      rows={['xsmall', 'xsmall']}
-      columns={["1/3", "2/3"]}
-      gap="medium"
+      rows={['xsmall', 'small']}
+      columns={['1/3', '2/3']}
+      gap="small"
       areas={[
         { name: 'header', start: [0, 0], end: [1, 0] },
         { name: 'nav', start: [0, 1], end: [0, 1] },
         { name: 'main', start: [1, 1], end: [2, 1] },
       ]}
     >
-      <Box gridArea="header" background="brand" alignSelf={center} >
-        <Typography variant="h1" component="h2" gutterBottom>
+      <Box gridArea="header" >
+        <Typography variant="h1" component="h2" >
           Melp
         </Typography>
       </Box>
@@ -58,7 +58,7 @@ const theme = {
       </Box>
 
       <Box gridArea="main" background="light-2">
-        <h1>Mapa</h1>
+        <h1>mapa</h1>
       </Box>
 
     </Grid>

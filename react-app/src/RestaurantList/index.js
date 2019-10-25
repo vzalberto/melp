@@ -69,7 +69,7 @@ const RestaurantList = (props) => {
 
 			<br /><br /><br />
 			
-			<Box direction="column" gap="small">
+			<Box direction="column" gap="medium">
 				{list.map((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
 			</Box>
 

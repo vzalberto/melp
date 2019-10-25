@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Melp from './Melp';
+import Melp from './Melp/';
 import * as serviceWorker from './serviceWorker';
 
 
