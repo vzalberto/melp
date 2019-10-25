@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/melp/static/js/main.9736daac.chunk.js",
-    "main.js.map": "/melp/static/js/main.9736daac.chunk.js.map",
+    "main.js": "/melp/static/js/main.7ac12d8b.chunk.js",
+    "main.js.map": "/melp/static/js/main.7ac12d8b.chunk.js.map",
     "runtime-main.js": "/melp/static/js/runtime-main.aa16e60c.js",
     "runtime-main.js.map": "/melp/static/js/runtime-main.aa16e60c.js.map",
     "static/css/2.6d4cc9f1.chunk.css": "/melp/static/css/2.6d4cc9f1.chunk.css",
-    "static/js/2.1c17be12.chunk.js": "/melp/static/js/2.1c17be12.chunk.js",
-    "static/js/2.1c17be12.chunk.js.map": "/melp/static/js/2.1c17be12.chunk.js.map",
+    "static/js/2.0bc3130b.chunk.js": "/melp/static/js/2.0bc3130b.chunk.js",
+    "static/js/2.0bc3130b.chunk.js.map": "/melp/static/js/2.0bc3130b.chunk.js.map",
     "index.html": "/melp/index.html",
-    "precache-manifest.54c0c69e67535f6a8f4da2c1d3a97314.js": "/melp/precache-manifest.54c0c69e67535f6a8f4da2c1d3a97314.js",
+    "precache-manifest.5419a1a550d07c5a35ac0b6cde6a624b.js": "/melp/precache-manifest.5419a1a550d07c5a35ac0b6cde6a624b.js",
     "service-worker.js": "/melp/service-worker.js",
     "static/css/2.6d4cc9f1.chunk.css.map": "/melp/static/css/2.6d4cc9f1.chunk.css.map",
     "static/media/index.css": "/melp/static/media/roboto-latin-900italic.ebf6d164.woff2"
