@@ -11,10 +11,9 @@ const RestaurantCard = (props) => {
 		<Grid 
 		background="neutral-1"
 			rows={['xsmall', 'small']}
-			border="all"
 			columns={['xsmall', 'small']}
 
-			gap="small"
+			gap="large"
 			areas={[
 				{name: 'restaurantName', start: [0,0], end: [1,0]},
 				{name: 'restaurantRating', start: [1,0], end: [2,0]},

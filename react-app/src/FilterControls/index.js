@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Box, Button, Text, TextInput } from 'grommet'
+import { Anchor, Box, Button, Text, TextInput } from 'grommet'
 
 import Context from '../context'
 
@@ -27,13 +27,21 @@ const FilterControls = () => {
 		<Box basis="small">
 
 		<TextInput 
-			placeholder={"(radius in meters)"}
+			placeholder={state.radius == 0 && "(radius in meters)"}
 			onChange={radiusUpdate}
 		/>
 		</Box>
 
 		<Button label="Filter" onClick={ () => dispatch ({type: "FILTER_BY_RADIUS"}) } />
+
+
+			<Box align="center">
+				{state.filtered && (
+					<Anchor label="remove filter [x]" onClick={()=>dispatch({type:'REMOVE_FILTER'})}/>
+				)}
+			</Box>
 		</Box>
+
 	);
 }
 

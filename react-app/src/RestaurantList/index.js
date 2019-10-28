@@ -38,14 +38,14 @@ const RestaurantList = (props) => {
 
 	const getStdDeviation = () => {
 
-    let sum = 0;
-    const m = state.restaurants.length
+	    let sum = 0;
+	    const m = state.restaurants.length
 
-    for (let i = state.restaurants.length - 1; i >= 0; i--) {
-      sum += Math.pow((parseFloat(state.restaurants[i].rating) - parseFloat(getAverageRating())), 2)
-    }
+	    for (let i = state.restaurants.length - 1; i >= 0; i--) {
+	      sum += Math.pow((parseFloat(state.restaurants[i].rating) - parseFloat(getAverageRating())), 2)
+	    }
 
-	return (Math.sqrt(sum/(m-1)).toFixed(3))
+		return (Math.sqrt(sum/(m-1)).toFixed(3))
 
 	}
 
@@ -53,8 +53,8 @@ const RestaurantList = (props) => {
 	const [rating_asc, setRatingAsc] = useState(true);
 
 	return(
-		<Box direction="column" gap="xlarge" >
-			<Box direction="row" gap="medium" pad="large" justifiy="center"> 
+		<Box direction="column" gap="medium" >
+			<Box direction="row" gap="large" pad="medium" justify="center"> 
 				<Box>
 					<Button
 					  	label="A-Z"
@@ -86,18 +86,12 @@ const RestaurantList = (props) => {
 				</Box>
 			</Box>
 
-			<Box align="center">
-				{state.filtered && (
-					<Anchor label="remove filter [x]" onClick={()=>dispatch({type:'REMOVE_FILTER'})}/>
-				)}
-			</Box>
-
 			<Box direction="column">
-            <TotalRestaurantsInRadius total={state.restaurants.length}/>
-            <AverageRatingLabel data={getAverageRating()}/>
-            <StandardDeviationLabel sigma={getStdDeviation()}/>
+	            <TotalRestaurantsInRadius total={state.restaurants.length}/>
+	            <AverageRatingLabel data={getAverageRating()}/>
+	            <StandardDeviationLabel sigma={getStdDeviation()}/>
             </Box>
-
+<br /><br /><br />
 			<Box overflow="auto" pad="small" direction="column">
 				<InfiniteScroll items={state.restaurants}>
 				 {((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
