@@ -16,14 +16,13 @@ const navigationControl = {
   }
 
 const INITIAL_VIEWPORT = {
-	latitude: 19.4183786,
-	longitude: -99.189842,
+	latitude: 19.4320281,
+	longitude: -99.1336334,
 	zoom: 15
 }
 const RestaurantMap = () => {
 	const {state, dispatch} = useContext(Context);
 	const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
-
 
 	const handleMapClick = ({lngLat, leftButton}) => {
 		if(!leftButton) return;
@@ -57,9 +56,9 @@ const RestaurantMap = () => {
 			 {state.restaurants[0] && (
 			 	state.restaurants.map(res=>{
 			 		return (
-			<Marker latitude={res.address.location.lat} longitude={res.address.location.lng} offsetLeft={-20} offsetTop={-10}>
-			    <Cafeteria/>
-			 </Marker>
+						<Marker latitude={res.address.location.lat} longitude={res.address.location.lng} offsetLeft={-20} offsetTop={-10}>
+						    <Cafeteria/>
+						 </Marker>
 			 		)
 			 	})
 			 ) }

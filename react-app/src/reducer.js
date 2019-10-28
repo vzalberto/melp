@@ -1,5 +1,5 @@
 
-//This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+//This function takes in latitude and longitude of two location and returns the distance between them in km (thanks, s.o.)
 function calcCrow(coords1, coords2)
 {
   // var R = 6.371; // km
@@ -50,9 +50,21 @@ export default function Reducer(state, { type, payload }){
 				radius: parseFloat(payload)
 			}
 
+		case "REMOVE_FILTER":
+			return{
+				...state,
+				radius: 0,
+				filtered: false,
+				restaurants: state.aux,
+				aux: [],
+			}
+
+
 		case "FILTER_BY_RADIUS":
 			return {
 				...state,
+				filtered: true,
+				aux: state.restaurants,
 				restaurants: state.restaurants.filter(el=>calcCrow(el.address.location, {lat: state.lat, lng: state.lng}) <= (state.radius))
 			}
 

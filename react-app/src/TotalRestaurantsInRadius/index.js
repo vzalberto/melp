@@ -5,7 +5,7 @@ import { Box, Text } from 'grommet';
 const TotalRestaurantsInRadius = (props) => {
 	return(
 
-		    <Box pad="medium" background="brand">
+		    <Box pad="small" background="brand">
 		      <Text size="large">Total restaurants in radius: {props.total}</Text>
 		    </Box>
 

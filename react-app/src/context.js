@@ -1,10 +1,12 @@
 import { createContext } from 'react';
 
 const Context = createContext({
-	lat: 19.4183786,
-	lng: -99.189842,
+	lat: 19.3117664,
+	lng: -98.716323,
 	radius: 0,
-	restaurants: []
+	restaurants: [],
+	aux: [],
+	filtered: false
 })
 
 export default Context;

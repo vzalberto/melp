@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Box, Button, TextInput } from 'grommet'
+import { Box, Button, Text, TextInput } from 'grommet'
 
 import Context from '../context'
 
@@ -9,26 +9,31 @@ const FilterControls = () => {
 	const {state} = useContext(Context)
 	const {dispatch} = useContext(Context);
 
-	const latUpdate = (event)=>{dispatch ({type: "UPDATE_LATITUDE", payload: event.target.value})}
-	const lngUpdate = (event)=>{dispatch ({type: "UPDATE_LONGITUDE", payload: event.target.value})}
 	const radiusUpdate = (event)=>{dispatch ({type: "UPDATE_RADIUS", payload: event.target.value})}
 
 	return (
-		<div>
+		<Box direction="row">
+		<Box basis="small">
+		<Text>latitude: {state.lat}
+		</Text>
+		
+		</Box>
+
+		<Box basis="small">
+		<Text>latitude: {state.lng}
+		</Text>
+		</Box>
+
+		<Box basis="small">
+
 		<TextInput 
-			placeholder={`latitude: ${state.lat}`}
-			onChange={latUpdate}
-		/>
-		<TextInput 
-			placeholder={`latitude: ${state.lng}`}
-			onChange={lngUpdate}
-		/>
-		<TextInput 
-			placeholder={`radius: ${state.radius}`}
+			placeholder={"(radius in meters)"}
 			onChange={radiusUpdate}
 		/>
-		<Button label="Filter by radius" onClick={ () => dispatch ({type: "FILTER_BY_RADIUS"}) } />
-		</div>
+		</Box>
+
+		<Button label="Filter" onClick={ () => dispatch ({type: "FILTER_BY_RADIUS"}) } />
+		</Box>
 	);
 }
 

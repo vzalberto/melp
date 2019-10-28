@@ -10,9 +10,6 @@ import RestaurantList from '../RestaurantList'
 import RestaurantMap from '../RestaurantMap'
 
 import RatingDistributionChart from '../RatingDistributionChart'
-import AverageRatingLabel from '../AverageRatingLabel'
-import StandardDeviationLabel from '../StandardDeviationLabel'
-import TotalRestaurantsInRadius from '../TotalRestaurantsInRadius'
 import FilterControls from '../FilterControls'
 import Context from '../context'
 import Reducer from '../reducer'
@@ -100,13 +97,7 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
       </Box>
 
       <Box gridArea="main" background="light-2">
-          <Grid>
           <FilterControls />
-          <TotalRestaurantsInRadius total={state.restaurants.length}/>
-          <AverageRatingLabel data={avg}/>
-          <StandardDeviationLabel sigma={sigma}/>
-          </Grid>
-
 
           <RestaurantMap />
 

@@ -2,7 +2,11 @@ import React, { useState, useContext } from 'react';
 
 import RestaurantCard from '../RestaurantCard';
 
-import { Box, Button, InfiniteScroll } from 'grommet';
+import AverageRatingLabel from '../AverageRatingLabel'
+import StandardDeviationLabel from '../StandardDeviationLabel'
+import TotalRestaurantsInRadius from '../TotalRestaurantsInRadius'
+
+import { Anchor, Box, Button, InfiniteScroll } from 'grommet';
 import { Ascend, Descend } from 'grommet-icons';
 
 import Context from '../context'
@@ -10,7 +14,7 @@ import Context from '../context'
 const RestaurantList = (props) => {
 
 	const {state, dispatch} = useContext(Context);
-	console.log(state.restaurants)
+
 	const sortByKey = (array, key, order) => {
 	    return array.sort((a, b) => {
 	        const x = a[key]; const y = b[key];
@@ -21,14 +25,8 @@ const RestaurantList = (props) => {
 	    });
 	}
 
-	//const [list, setList] = useState(props.restaurants);
-
 	const [name_asc, setNameAsc] = useState(true);
 	const [rating_asc, setRatingAsc] = useState(true);
-
-	// useEffect(()=>{
-	// 	setList(props.restaurants)
-	// }, [props]);
 
 	return(
 		<Box direction="column" gap="xlarge" >
@@ -63,7 +61,19 @@ const RestaurantList = (props) => {
 
 				</Box>
 			</Box>
-			
+
+		<Box align="center">
+				{state.filtered && (
+					<Anchor label="remove filter [x]" onClick={()=>dispatch({type:'REMOVE_FILTER'})}/>
+				)}
+			</Box>
+
+			<Box direction="row">
+            <TotalRestaurantsInRadius total={state.restaurants.length}/>
+            <AverageRatingLabel data={1}/>
+            <StandardDeviationLabel sigma={1}/>
+            </Box>
+
 			<Box overflow="auto" pad="small" direction="column">
 				<InfiniteScroll items={state.restaurants}>
 				 {((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
