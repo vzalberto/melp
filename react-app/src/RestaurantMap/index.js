@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react'
-import ReactMapGL, { NavigationControl } from 'react-map-gl'
+import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 import {Box} from 'grommet'
+import { Cafeteria, Location } from 'grommet-icons'
 
 import Context from '../context'
 
@@ -39,14 +40,29 @@ const RestaurantMap = () => {
 				onClick={handleMapClick}
 				width="100vw"
 				height="100vh"
-				mapStyle="mapbox://styles/mapbox/satellite-v9"
+				mapStyle="mapbox://styles/mapbox/streets-v9"
 				{...viewport}
 				mapboxApiAccessToken = "pk.eyJ1IjoidnphbGJlcnRvIiwiYSI6ImNrMjllZzNjdTFtZXMzZXRjaHJ6Z2NlNW4ifQ.0DS64cOS3tH51tPaajudew"
 				onViewportChange={(viewport)=>setViewport(viewport)}
 			>
-			<div style={navigationControl}>
-			<NavigationControl onViewportChange={(viewport)=>setViewport(viewport)} />
-			</div>
+
+				<div style={navigationControl}>
+					<NavigationControl onViewportChange={(viewport)=>setViewport(viewport)} />
+				</div>
+
+			<Marker latitude={state.lat} longitude={state.lng} offsetLeft={-20} offsetTop={-10}>
+			    <Location />
+			 </Marker>
+
+			 {state.restaurants[0] && (
+			 	state.restaurants.map(res=>{
+			 		return (
+			<Marker latitude={res.address.location.lat} longitude={res.address.location.lng} offsetLeft={-20} offsetTop={-10}>
+			    <Cafeteria/>
+			 </Marker>
+			 		)
+			 	})
+			 ) }
 			</ReactMapGL>
 		</Box>
 	);

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Box, TextInput } from 'grommet'
+import { Box, Button, TextInput } from 'grommet'
 
 import Context from '../context'
 
@@ -27,6 +27,7 @@ const FilterControls = () => {
 			placeholder={`radius: ${state.radius}`}
 			onChange={radiusUpdate}
 		/>
+		<Button label="Filter by radius" onClick={ () => dispatch ({type: "FILTER_BY_RADIUS"}) } />
 		</div>
 	);
 }

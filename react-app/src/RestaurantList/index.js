@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 
 import RestaurantCard from '../RestaurantCard';
 
 import { Box, Button, InfiniteScroll } from 'grommet';
 import { Ascend, Descend } from 'grommet-icons';
 
+import Context from '../context'
+
 const RestaurantList = (props) => {
 
+	const {state, dispatch} = useContext(Context);
+	console.log(state.restaurants)
 	const sortByKey = (array, key, order) => {
 	    return array.sort((a, b) => {
 	        const x = a[key]; const y = b[key];
@@ -17,19 +21,14 @@ const RestaurantList = (props) => {
 	    });
 	}
 
-	const [list, setList] = useState(props.restaurants);
+	//const [list, setList] = useState(props.restaurants);
 
 	const [name_asc, setNameAsc] = useState(true);
 	const [rating_asc, setRatingAsc] = useState(true);
 
-	useEffect(()=>{
-		setList(props.restaurants)
-	}, [props]);
-
-	useEffect(() => {
-		console.log('hello from useEffect')
-		console.log(list)
-	}, [list]);
+	// useEffect(()=>{
+	// 	setList(props.restaurants)
+	// }, [props]);
 
 	return(
 		<Box direction="column" gap="xlarge" >
@@ -40,9 +39,9 @@ const RestaurantList = (props) => {
 					  	icon={ name_asc ? (<Ascend/>) : (<Descend/>)}
 
 					  onClick={() => {
-					  	const arr = sortByKey([...props.restaurants], "name", name_asc);
+					  	const arr = sortByKey([...state.restaurants], "name", name_asc);
 					  	setNameAsc(!name_asc);
-					  	setList(arr);
+					  	dispatch ({type: "UPDATE_RESTAURANTS", payload: arr});
 					  }}
 
 					/>
@@ -54,9 +53,9 @@ const RestaurantList = (props) => {
 					  	icon={ rating_asc ? (<Ascend/>) : (<Descend/>)}
 
 					  onClick={() => {
-					  	const arr = sortByKey([...props.restaurants], "rating", rating_asc)
+					  	const arr = sortByKey([...state.restaurants], "rating", rating_asc)
 						setRatingAsc(!rating_asc)
-					  	setList(arr)
+					  	dispatch ({type: "UPDATE_RESTAURANTS", payload: arr});
 
 					  }}
 
@@ -66,8 +65,8 @@ const RestaurantList = (props) => {
 			</Box>
 			
 			<Box overflow="auto" pad="small" direction="column">
-				<InfiniteScroll items={list}>
-				{((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
+				<InfiniteScroll items={state.restaurants}>
+				 {((item, key)=>(<RestaurantCard data={item} key={item.id}/>))}
 				</InfiniteScroll>
 			</Box>
 
