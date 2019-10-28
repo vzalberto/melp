@@ -14,13 +14,13 @@ const FilterControls = () => {
 	return (
 		<Box direction="row">
 		<Box basis="small">
-		<Text>latitude: {state.lat}
+		<Text><b>latitude:</b> {state.lat}
 		</Text>
 		
 		</Box>
 
 		<Box basis="small">
-		<Text>latitude: {state.lng}
+		<Text><b>latitude: </b>{state.lng}
 		</Text>
 		</Box>
 

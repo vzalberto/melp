@@ -62,7 +62,7 @@ const RestaurantList = (props) => {
 				</Box>
 			</Box>
 
-		<Box align="center">
+			<Box align="center">
 				{state.filtered && (
 					<Anchor label="remove filter [x]" onClick={()=>dispatch({type:'REMOVE_FILTER'})}/>
 				)}
