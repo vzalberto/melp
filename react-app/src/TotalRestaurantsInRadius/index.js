@@ -6,7 +6,7 @@ const TotalRestaurantsInRadius = (props) => {
 	return(
 
 		    <Box pad="small" background="brand">
-		      <Text size="large">Total restaurants in radius: {props.total}</Text>
+		      <Text size="small">Total restaurants in radius: {props.total}</Text>
 		    </Box>
 
 	)

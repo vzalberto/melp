@@ -5,8 +5,8 @@ import { Box, Text } from 'grommet';
 const AverageRating = (props) => {
 	return(
 
-		    <Box pad="medium" background="brand">
-		      <Text size="large">Average rating: {props.data}</Text>
+		    <Box pad="small" background="brand">
+		      <Text size="small">Average rating: {props.data}</Text>
 		    </Box>
 
 	)

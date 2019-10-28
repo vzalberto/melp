@@ -25,6 +25,30 @@ const RestaurantList = (props) => {
 	    });
 	}
 
+	const getAverageRating = () => {
+	    let sum = 0;
+	    const m = state.restaurants.length
+
+	    for (let i = state.restaurants.length - 1; i >= 0; i--) {
+	      sum += state.restaurants[i].rating 
+	    }
+
+	    return (sum/m)
+	}
+
+	const getStdDeviation = () => {
+
+    let sum = 0;
+    const m = state.restaurants.length
+
+    for (let i = state.restaurants.length - 1; i >= 0; i--) {
+      sum += Math.pow((parseFloat(state.restaurants[i].rating) - parseFloat(getAverageRating())), 2)
+    }
+
+	return (Math.sqrt(sum/(m-1)).toFixed(3))
+
+	}
+
 	const [name_asc, setNameAsc] = useState(true);
 	const [rating_asc, setRatingAsc] = useState(true);
 
@@ -68,10 +92,10 @@ const RestaurantList = (props) => {
 				)}
 			</Box>
 
-			<Box direction="row">
+			<Box direction="column">
             <TotalRestaurantsInRadius total={state.restaurants.length}/>
-            <AverageRatingLabel data={1}/>
-            <StandardDeviationLabel sigma={1}/>
+            <AverageRatingLabel data={getAverageRating()}/>
+            <StandardDeviationLabel sigma={getStdDeviation()}/>
             </Box>
 
 			<Box overflow="auto" pad="small" direction="column">

@@ -5,8 +5,8 @@ import { Box, Text } from 'grommet';
 const StandardDeviationLabel = (props) => {
 	return(
 
-		    <Box pad="medium" background="brand">
-		      <Text size="large">Sigma: {props.sigma}</Text>
+		    <Box pad="small" background="brand">
+		      <Text size="small">Sigma: {props.sigma}</Text>
 		    </Box>
 
 	)

@@ -37,33 +37,6 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
   }, []);
 }
 
-  //This hook calculates the average of current restaurants
-  // useEffect(()=>{
-  //   let sum = 0;
-  //   const m = restaurants.length
-
-  //   for (let i = restaurants.length - 1; i >= 0; i--) {
-  //     sum += restaurants[i].rating 
-  //   }
-
-  //   setAvg(sum/m)
-
-  // }, [restaurants])
-
-  //This handles std deviation, depends on the average being calculated first.
-  // useEffect(()=>{
-  //   let sum = 0;
-  //   const m = restaurants.length
-
-  //   for (let i = restaurants.length - 1; i >= 0; i--) {
-  //     sum += Math.pow((parseFloat(restaurants[i].rating) - parseFloat(avg)), 2)
-  //   }
-
-  //   console.log(sum)
-
-  //   setSigma(Math.sqrt(sum/(m-1)).toFixed(3))
-  // }, [avg])
-
   const theme = {
     global: {
       font: {
