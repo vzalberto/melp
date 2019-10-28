@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/melp/static/js/main.4f3cfedd.chunk.js",
-    "main.js.map": "/melp/static/js/main.4f3cfedd.chunk.js.map",
+    "main.js": "/melp/static/js/main.efb21d03.chunk.js",
+    "main.js.map": "/melp/static/js/main.efb21d03.chunk.js.map",
     "runtime-main.js": "/melp/static/js/runtime-main.aa16e60c.js",
     "runtime-main.js.map": "/melp/static/js/runtime-main.aa16e60c.js.map",
     "static/css/2.ca0fd352.chunk.css": "/melp/static/css/2.ca0fd352.chunk.css",
     "static/js/2.e04a7827.chunk.js": "/melp/static/js/2.e04a7827.chunk.js",
     "static/js/2.e04a7827.chunk.js.map": "/melp/static/js/2.e04a7827.chunk.js.map",
     "index.html": "/melp/index.html",
-    "precache-manifest.bf7bddeee85d7d8e7c37889d11c29fad.js": "/melp/precache-manifest.bf7bddeee85d7d8e7c37889d11c29fad.js",
+    "precache-manifest.e53fef2d2b30cd5fbe035f1ab63773fa.js": "/melp/precache-manifest.e53fef2d2b30cd5fbe035f1ab63773fa.js",
     "service-worker.js": "/melp/service-worker.js",
     "static/css/2.ca0fd352.chunk.css.map": "/melp/static/css/2.ca0fd352.chunk.css.map",
     "static/media/index.css": "/melp/static/media/roboto-latin-900italic.ebf6d164.woff2"
