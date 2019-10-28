@@ -57,7 +57,8 @@ const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
 
 
 
-    setRestaurants(res.data.filter(el=>calcCrow(el.address.location, {lat: state.lat, lng: state.lng}) <= state.radius))
+    //setRestaurants(res.data.filter(el=>calcCrow(el.address.location, {lat: state.lat, lng: state.lng}) <= state.radius))
+    setRestaurants(res.data)
   }
 
   useEffect(() => {

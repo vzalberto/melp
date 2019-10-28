@@ -15,9 +15,9 @@ const navigationControl = {
   }
 
 const INITIAL_VIEWPORT = {
-	latitude: 37.7,
-	longitude: -122.45,
-	zoom: 13
+	latitude: 19.4183786,
+	longitude: -99.189842,
+	zoom: 15
 }
 const RestaurantMap = () => {
 	const {state, dispatch} = useContext(Context);
