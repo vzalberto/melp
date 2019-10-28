@@ -10,7 +10,6 @@ const FilterControls = () => {
 	const {dispatch} = useContext(Context);
 
 	const radiusUpdate = (event)=>{dispatch ({type: "UPDATE_RADIUS", payload: event.target.value})}
-
 	return (
 		<Box direction="row">
 		<Box basis="small">
@@ -26,8 +25,9 @@ const FilterControls = () => {
 
 		<Box basis="small">
 
+
 		<TextInput 
-			placeholder={state.radius == 0 && "(radius in meters)"}
+			placeholder={!state.filtered && "(radius in meters)"}
 			onChange={radiusUpdate}
 		/>
 		</Box>
@@ -36,9 +36,11 @@ const FilterControls = () => {
 
 
 			<Box align="center">
+
 				{state.filtered && (
 					<Anchor label="remove filter [x]" onClick={()=>dispatch({type:'REMOVE_FILTER'})}/>
-				)}
+				) || <p>Drop a pin and set radius</p>}
+
 			</Box>
 		</Box>
 

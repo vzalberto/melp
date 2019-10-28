@@ -49,7 +49,7 @@ const RestaurantMap = () => {
 					<NavigationControl onViewportChange={(viewport)=>setViewport(viewport)} />
 				</div>
 
-			<Marker latitude={state.lat} longitude={state.lng} offsetLeft={-20} offsetTop={-10}>
+			<Marker latitude={state.lat} longitude={state.lng} >
 			    <Location />
 			 </Marker>
 
